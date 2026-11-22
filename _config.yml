@@ -1,12 +1,15 @@
+# Site name is a placeholder until Andrew picks one. Change it here only;
+# every page reads site.title.
 title: Andrew's Notes
+tagline: Notes from the workbench
 description: >-
-  Interesting finds and troubleshooting write-ups from my projects.
+  Interesting finds and troubleshooting write-ups from my projects: home
+  automation, networking, CNC and whatever else I'm tinkering with.
 author: Andrew
 url: "https://andrewpc.github.io"
 baseurl: ""
 github_username: andrewpc
 
-theme: minima
 permalink: /:year/:month/:day/:title/
 timezone: Australia/Sydney
 
@@ -20,11 +23,16 @@ kramdown:
   input: GFM
   syntax_highlighter: rouge
 
-show_excerpts: true
-
-minima:
-  social_links:
-    github: andrewpc
+# Top navigation (the theme lives in _layouts, _includes and assets/).
+nav:
+  - title: Posts
+    url: /
+  - title: Tags
+    url: /tags/
+  - title: Archive
+    url: /archive/
+  - title: About
+    url: /about/
 
 defaults:
   - scope:

@@ -1,0 +1,5 @@
+{%- assign words = include.post.content | strip_html | number_of_words -%}
+{%- assign mins = words | divided_by: 220 | at_least: 1 -%}
+<time datetime="{{ include.post.date | date_to_xmlschema }}">{{ include.post.date | date: '%-d %b %Y' }}</time>
+<span aria-hidden="true">&middot;</span>
+<span>{{ mins }} min read</span>

@@ -56,6 +56,7 @@ Copy `_templates/post.md`. Fields:
 | `description` | yes | One or two sentences. Used for the excerpt, SEO and the feed. |
 | `categories` | yes | Exactly one of: `troubleshooting`, `til` (today I learned), `project-notes`, `guides`. |
 | `tags` | yes | 2 to 6 lowercase tags, e.g. `[esphome, home-assistant, e-paper]`. Reuse existing tags (`grep -h '^tags:' _posts/*`) before inventing new ones. |
+| `image` | optional | Card thumbnail and social preview, e.g. `/assets/images/posts/<slug>/hero.jpg`. If omitted, the home page card uses the post's first image, or category placeholder art if it has none. |
 | `source_project` | optional | Repo or project the post came from, e.g. `andrewpc/esphome-custom-ada-epd`. Only if the repo is public; otherwise omit. |
 
 `--strict_front_matter` is on in CI, so malformed YAML fails the build.
@@ -105,7 +106,8 @@ post won't render.
 
 ## Don't
 
-- Don't change `_config.yml`, the workflow, the theme or layouts as part of a
-  post PR. Site changes go in their own PR.
+- Don't change `_config.yml`, the workflow, or the theme (`_layouts/`,
+  `_includes/`, `_data/`, `assets/css/`, `assets/js/`) as part of a post PR.
+  Site changes go in their own PR.
 - Don't add plugins that aren't in the `Gemfile`.
 - Don't put more than one post in a PR unless Andrew asked for a series.

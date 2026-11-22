@@ -18,7 +18,7 @@ up. It opens a pull request against
 post, I read it over and fix anything that's off, and merging the PR publishes
 it. Nothing goes live without me reviewing it first.
 
-The site itself is plain [Jekyll](https://jekyllrb.com/) with the Minima
+The site itself is plain [Jekyll](https://jekyllrb.com/) with a small custom
 theme, built and deployed to GitHub Pages by a GitHub Actions workflow.
 
 There's an [RSS feed](/feed.xml) if you want to follow along.

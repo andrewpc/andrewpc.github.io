@@ -5,6 +5,7 @@ description: >-
   One or two sentences saying what the problem or finding was and what solved it.
 categories: [troubleshooting]   # one of: troubleshooting, til, project-notes, guides
 tags: [tag-one, tag-two]
+# image: /assets/images/posts/your-slug/hero.jpg   # optional card/social image; defaults to the first image in the post
 # source_project: andrewpc/some-public-repo
 ---
 
