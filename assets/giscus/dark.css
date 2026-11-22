@@ -1,0 +1,38 @@
+/* giscus theme matching the site's dark palette (assets/css/main.css).
+   Starts from giscus's own dark theme and overrides the main colours. */
+@import url("https://giscus.app/themes/dark.css");
+
+main {
+  --color-canvas-default: #141821;
+  --color-canvas-overlay: #1a1f2b;
+  --color-canvas-inset: #0b0d12;
+  --color-canvas-subtle: #10131a;
+  --color-border-default: #323a4c;
+  --color-border-muted: #232937;
+  --color-fg-default: #e7e9ee;
+  --color-fg-muted: #8b94a5;
+  --color-fg-subtle: #8b94a5;
+  --color-accent-fg: #ffc35c;
+  --color-accent-emphasis: #f5a524;
+  --color-accent-muted: rgba(245, 165, 36, 0.4);
+  --color-accent-subtle: rgba(245, 165, 36, 0.14);
+  --color-btn-primary-text: #111111;
+  --color-btn-primary-bg: #f5a524;
+  --color-btn-primary-border: rgba(0, 0, 0, 0);
+  --color-btn-primary-hover-bg: #ffb53f;
+  --color-btn-primary-hover-border: rgba(0, 0, 0, 0);
+  --color-btn-primary-selected-bg: #e0951c;
+  --color-btn-primary-disabled-text: rgba(17, 17, 17, 0.6);
+  --color-btn-primary-disabled-bg: rgba(245, 165, 36, 0.5);
+  --color-btn-bg: #1a1f2b;
+  --color-btn-border: #323a4c;
+  --color-btn-hover-bg: #232937;
+  --color-btn-hover-border: #3e4860;
+  --color-primer-border-active: #f5a524;
+  --color-segmented-control-bg: #10131a;
+  --color-segmented-control-button-bg: #1a1f2b;
+  --color-social-reaction-bg-hover: #232937;
+  --color-social-reaction-bg-reacted-hover: rgba(245, 165, 36, 0.3);
+}
+
+.gsc-main { font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif; }

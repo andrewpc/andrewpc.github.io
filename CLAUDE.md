@@ -68,6 +68,7 @@ Copy `_templates/post.md`. Fields:
 | `tags` | yes | 2 to 6 lowercase tags, e.g. `[esphome, home-assistant, e-paper]`. Reuse existing tags (`grep -h '^tags:' _posts/*`) before inventing new ones. |
 | `image` | optional | Card thumbnail and social preview, e.g. `/assets/images/posts/<slug>/hero.jpg`. If omitted, the home page card uses the post's first image, or category placeholder art if it has none. |
 | `source_project` | optional | Repo or project the post came from, e.g. `andrewpc/esphome-custom-ada-epd`. Only if the repo is public; otherwise omit. |
+| `comments` | optional | Set to `false` to hide the comment box on that post. Comments are on by default. |
 
 `--strict_front_matter` is on in CI, so malformed YAML fails the build.
 

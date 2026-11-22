@@ -23,6 +23,16 @@ kramdown:
   input: GFM
   syntax_highlighter: rouge
 
+# Comments on posts, via giscus (https://giscus.app), stored as GitHub
+# Discussions on this repo. The comment box only renders once category_id is
+# set. Get repo_id/category_id from giscus.app after enabling Discussions and
+# installing the giscus app. Set `comments: false` on a post to hide it there.
+giscus:
+  repo: andrewpc/andrewpc.github.io
+  repo_id: R_kgDOV3HvYA
+  category: Announcements
+  category_id: ""
+
 # Top navigation (the theme lives in _layouts, _includes and assets/).
 nav:
   - title: Posts
