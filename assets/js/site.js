@@ -38,6 +38,28 @@
     });
   });
 
+  // Images in posts are height-capped; click one to see it full size.
+  var postImgs = document.querySelectorAll('.prose img');
+  if (postImgs.length) {
+    var box = document.createElement('div');
+    box.className = 'lightbox';
+    box.hidden = true;
+    box.innerHTML = '<img alt=""><p></p>';
+    document.body.appendChild(box);
+    var hideBox = function () { box.hidden = true; };
+    box.addEventListener('click', hideBox);
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') hideBox(); });
+    postImgs.forEach(function (img) {
+      if (img.closest('a')) return;
+      img.addEventListener('click', function () {
+        box.querySelector('img').src = img.currentSrc || img.src;
+        box.querySelector('img').alt = img.alt;
+        box.querySelector('p').textContent = img.alt;
+        box.hidden = false;
+      });
+    });
+  }
+
   // Heading anchors + table of contents
   var headings = Array.prototype.slice.call(document.querySelectorAll('.post .prose h2[id], .post .prose h3[id]'));
   headings.forEach(function (h) {

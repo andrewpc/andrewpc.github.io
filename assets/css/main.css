@@ -183,7 +183,7 @@ kbd {
 .card:hover { transform: translateY(-3px); border-color: var(--border-strong); }
 .card[hidden] { display: none; }
 .card-media { display: block; aspect-ratio: 16 / 9; overflow: hidden; background: var(--surface-2); position: relative; }
-.card-media img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s ease; display: block; }
+.card-media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 30%; transition: transform .5s ease; display: block; }
 .card:hover .card-media img { transform: scale(1.04); }
 .card-art {
   position: absolute; inset: 0; display: flex; align-items: flex-end; justify-content: space-between; padding: 18px 20px;
@@ -213,7 +213,7 @@ kbd {
 
 @media (min-width: 900px) {
   .card-featured { grid-column: 1 / -1; flex-direction: row; }
-  .card-featured .card-media { flex: 0 0 56%; aspect-ratio: auto; min-height: 340px; }
+  .card-featured .card-media { flex: 0 0 56%; aspect-ratio: auto; min-height: 340px; max-height: 440px; }
   .card-featured .card-body { padding: 36px; justify-content: center; }
   .card-featured .card-title { font-size: 32px; line-height: 1.15; }
   .card-featured .card-desc { font-size: 17px; -webkit-line-clamp: 5; }
@@ -288,7 +288,17 @@ kbd {
 .prose hr { border: 0; height: 1px; background: var(--border); margin: 3em 0; }
 .prose blockquote { border-left: 3px solid var(--accent); background: var(--accent-soft); margin-left: 0; padding: 14px 20px; border-radius: 0 var(--radius-sm) var(--radius-sm) 0; color: var(--text); }
 .prose blockquote > :last-child { margin-bottom: 0; }
-.prose img { display: block; border-radius: var(--radius-sm); border: 1px solid var(--border); margin: 1.8em auto .5em; }
+.prose img {
+  display: block; width: auto; max-width: 100%; height: auto; max-height: min(72vh, 560px);
+  border-radius: var(--radius-sm); border: 1px solid var(--border); margin: 1.8em auto .5em;
+  background: var(--surface-2); cursor: zoom-in;
+}
+.prose p:has(> img + img) { display: flex; gap: 12px; justify-content: center; align-items: flex-start; }
+.prose p:has(> img + img) img { margin: 1.8em 0 .5em; min-width: 0; flex: 0 1 auto; }
+.lightbox { position: fixed; inset: 0; z-index: 90; background: rgba(5,6,10,.88); display: flex; align-items: center; justify-content: center; padding: 24px; cursor: zoom-out; }
+.lightbox[hidden] { display: none; }
+.lightbox img { max-width: 100%; max-height: 100%; border-radius: var(--radius-sm); box-shadow: 0 30px 80px -20px rgba(0,0,0,.7); }
+.lightbox p { position: absolute; bottom: 16px; left: 24px; right: 24px; margin: 0; text-align: center; color: #cfd5df; font-size: 14px; }
 .prose p:has(> img:only-child) { margin: 0 0 1.25em; }
 .prose figcaption, .prose .caption { font-size: 14px; color: var(--muted); text-align: center; }
 .prose table { width: 100%; border-collapse: collapse; font-size: 15px; display: block; overflow-x: auto; }
