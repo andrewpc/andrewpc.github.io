@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="780" height="740" viewBox="0 0 780 740" font-family="Helvetica,Arial,sans-serif" font-size="13">
+<rect width="780" height="740" fill="#fff"/>
+<defs><pattern id="h" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="8" stroke="#778" stroke-width="1.2"/></pattern>
+<marker id="a" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,2 L10,5 L0,8 z" fill="context-stroke"/></marker></defs>
+<text x="20" y="28" font-size="16" font-weight="bold">Custom SPZ servo pulley, version 10 (section, mm)</text>
+<text x="20" y="48" fill="#555">Distances along the shaft are from the swinging plate front face. Plate and servo are approximate.</text>
+<polygon points="552.8,668.0 552.8,92.0 602.0,92.0 602.0,668.0" fill="#999" stroke="#333"/>
+<polygon points="500.0,170.0 500.0,80.0 552.8,80.0 552.8,170.0" fill="#ddd" stroke="#333"/>
+<polygon points="500.0,590.0 500.0,680.0 552.8,680.0 552.8,590.0" fill="#ddd" stroke="#333"/>
+<polygon points="552.8,323.0 344.0,323.0 344.0,437.0 552.8,437.0" fill="none" stroke="#1f5fbf" stroke-dasharray="6 4" stroke-width="1.5"/>
+<polygon points="512.0,322.9 512.0,266.0 406.4,266.0 406.4,128.0 387.6,128.0 367.4,194.0 349.4,194.0 329.2,128.0 310.4,128.0 310.4,322.9" fill="url(#h)" stroke="#111" stroke-width="2"/>
+<polygon points="512.0,437.1 512.0,494.0 406.4,494.0 406.4,632.0 387.6,632.0 367.4,566.0 349.4,566.0 329.2,632.0 310.4,632.0 310.4,437.1" fill="url(#h)" stroke="#111" stroke-width="2"/>
+<polygon points="458.0,322.9 440.0,322.9 440.0,266.0 458.0,266.0" fill="#fff" stroke="#c00" stroke-width="2"/>
+<polygon points="310.4,308.0 292.4,308.0 292.4,452.0 310.4,452.0" fill="#eee" stroke="#333"/>
+<line x1="632" y1="380" x2="236" y2="380" stroke="#333" stroke-dasharray="12 4 2 4"/>
+<line x1="358.4" y1="98" x2="358.4" y2="710" stroke="#0a8a2a" stroke-dasharray="8 4" stroke-width="1.5"/>
+<line x1="500" y1="704" x2="358.4" y2="704" stroke="#0a8a2a" marker-start="url(#a)" marker-end="url(#a)"/>
+<text x="429" y="699" text-anchor="middle" fill="#0a8a2a">belt centre 23.6 from plate face</text>
+<text x="526" y="68" text-anchor="middle" fill="#111" >plate ~8.8</text>
+<text x="577" y="392" text-anchor="middle" fill="#fff" transform="rotate(-90 577 392)">servo</text>
+<text x="416" y="206" text-anchor="start" fill="#c00" >2x M6 set screws at 8.5</text>
+<text x="416" y="221" text-anchor="start" fill="#c00" >(one over the key, one at 90°)</text>
+<text x="365" y="362" text-anchor="start" fill="#1f5fbf" >shaft Ø19, 26 past plate</text>
+<text x="284" y="164" text-anchor="end" fill="#111" >SPZ 34°</text>
+<text x="284" y="296" text-anchor="end" fill="#111" >M6 end screw</text>
+<text x="284" y="311" text-anchor="end" fill="#111" >+ washer (stop only)</text>
+<text x="452" y="518" text-anchor="start" fill="#111" >hub Ø38</text>
+<text x="284" y="482" text-anchor="end" fill="#111" >bore 19.03</text>
+<text x="284" y="497" text-anchor="end" fill="#111" >keyway 6.03 through</text>
+<text x="358" y="509" text-anchor="middle" fill="#111" >Ø80 pitch</text>
+<text x="358" y="524" text-anchor="middle" fill="#111" >Ø84 OD</text>
+<line x1="512" y1="653.0" x2="310.4" y2="653.0" stroke="#111" marker-start="url(#a)" marker-end="url(#a)"/>
+<text x="411" y="648" text-anchor="middle" fill="#111">33.6 overall</text>
+<line x1="512" y1="623.0" x2="344" y2="623.0" stroke="#111" marker-start="url(#a)" marker-end="url(#a)"/>
+<text x="428" y="618" text-anchor="middle" fill="#111">28 on shaft</text>
+<line x1="344" y1="593.0" x2="310.4" y2="593.0" stroke="#111" marker-start="url(#a)" marker-end="url(#a)"/>
+<text x="327" y="588" text-anchor="middle" fill="#111">5.6</text>
+<line x1="406.4" y1="110" x2="310.4" y2="110" stroke="#111" marker-start="url(#a)" marker-end="url(#a)"/>
+<text x="358" y="105" text-anchor="middle" fill="#111">16 rim</text>
+</svg>
