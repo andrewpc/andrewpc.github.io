@@ -1,6 +1,6 @@
 ---
 title: "An enclosure for my PrintNC, part 1: designing around the machine"
-date: 2026-11-22 14:30:00 +1100
+date: 2026-11-01 21:00:00 +1100
 description: >-
   Part 1 of building a 4040 extrusion and polycarbonate chip enclosure for my
   PrintNC: working around Y motors that stick out the front, printed hinges,
