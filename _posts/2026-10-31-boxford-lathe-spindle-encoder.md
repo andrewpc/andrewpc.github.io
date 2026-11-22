@@ -1,6 +1,6 @@
 ---
 title: "A spindle encoder for my Boxford TCL 240: slotted sensors on the original disc"
-date: 2026-11-22 14:30:00 +1100
+date: 2026-10-31 17:00:00 +1100
 description: >-
   Giving the Masso G3 on my Boxford TCL 240 a spindle encoder by putting two
   Optek OPB981 slotted optical sensors on the lathe's original encoder disc, in
@@ -99,10 +99,11 @@ give clean edges at speed, so I swapped them for the 1.5 kΩ ones.
 
 ![The old 5.6 kΩ pull-ups on the Masso's encoder inputs, before I swapped them for 1.5 kΩ](/assets/images/posts/boxford-lathe-spindle-encoder/old-pullups.jpg)
 
-The hole-ring sensor feeds A and the index sensor feeds Z. With only one
-sensor on the holes there's no true quadrature, so the Masso shows the same
-rpm whichever way the spindle turns. A third sensor a quarter of a hole pitch
-from the first would give a proper B channel for direction. I've designed a
+The hole-ring sensor's output goes to both A and B, linked at the Masso, and
+the index sensor feeds Z. With only one sensor on the holes there's no true
+quadrature, so the Masso shows the same rpm whichever way the spindle turns. A
+third sensor a quarter of a hole pitch from the first would give a proper,
+separate B channel for direction. I've designed a
 three-sensor bracket for that, but haven't needed it yet.
 
 ## Brackets, in two stages
@@ -185,7 +186,7 @@ I measured 0.23 mm between the top of the sensor body and the seat.
 
 ![The sensor on the first fixed bracket, leaning forward slightly from its single tab screw](/assets/images/posts/boxford-lathe-spindle-encoder/fixed-bracket-lean.jpg)
 
-The changes for the next version:
+The changes for the final version:
 
 - The sensor is raised 0.75 mm.
 - The seat leans back about the tab screw, so the sensor finishes upright once
@@ -243,8 +244,8 @@ Z to what the encoder actually measures, not to what S asked for.
 
 - The encoder works: the Masso reads spindle speed and index from the two
   sensors, and commanded speeds now match the real spindle speed.
-- The latest fixed bracket, with the raised sensor, 2.5° seat lean, locating
-  pocket and front hold-down, is the one I'm fitting next.
+- The final fixed bracket, with the raised sensor, 2.5° seat lean and locating
+  pocket, is fitted. The front M5 hold-down screw still has to go in.
 - **Still to do:** cut a test thread and measure across 20 pitches. That's the
   real check on the 99-hole count and the whole setup. A 1% count error would
   show up as about 0.3 mm over 20 threads at 1.5 mm pitch.
