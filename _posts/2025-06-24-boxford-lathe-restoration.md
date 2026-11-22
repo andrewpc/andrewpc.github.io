@@ -1,9 +1,9 @@
 ---
 title: "Restoring a Boxford TCL 240 CNC lathe: strip, paint and a full rewire"
-date: 2025-04-12 12:00:00 +1000
+date: 2025-06-24 12:00:00 +1000
 description: >-
   How I took a rough, half-converted Boxford TCL 240 training lathe from
-  Facebook Marketplace to a clean, safe machine in about three months:
+  Facebook Marketplace to a clean, safe machine in about five months:
   chemical strip, primer and green enamel, a rewired electrical tray with a
   proper e-stop contactor, a new aluminium control panel, and a gas strut for
   the guard.
@@ -17,7 +17,7 @@ for $4,000. A previous owner had already started converting it: a Masso G3
 controller, NEMA 34 closed-loop steppers on both axes, and a 1 hp induction
 motor on a VFD for the spindle. The parts were good but the machine was not.
 The paint was chipped and rusting, the wiring was loose and questionable, and
-there was no e-stop that actually cut power. Over the next three months I
+there was no e-stop that actually cut power. Over the next five months I
 stripped it to bare metal, repainted it, rewired the electrical tray from
 scratch, and made a new control panel. This post covers that restoration.
 
@@ -163,8 +163,8 @@ the end of it.
 ## Where it ended up
 
 From buying it in mid January to the finished tray in early March took about
-seven weeks of evenings and weekends, with the panel, the strut and other
-small jobs running into April. The result is a machine that looks the part,
+seven weeks of evenings and weekends, with the riser block, the strut and other
+small jobs running on until about June. The result is a machine that looks the part,
 has wiring I trust, and has an e-stop that actually cuts the power.
 
 ![The finished lathe in the workshop, with the guard open and the tailstock in place](/assets/images/posts/boxford-lathe-restoration/hero.jpg)
