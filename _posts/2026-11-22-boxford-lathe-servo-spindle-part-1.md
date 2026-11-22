@@ -45,7 +45,7 @@ slow ribbed-belt ranges, so the new drive only needs the top V-belt range.
 |---|---|
 | Delta ECM-E3M-C20807RSE | 750 W servo motor, 80 mm flange, 2.4 Nm rated, 3000 rpm rated / 6000 rpm max, 19 x 35 mm keyed shaft (6 mm key, M6 end tap), oil seal, no brake |
 | Delta ASD-E3-0721-L | Matching drive. The **-L** variant is the one with pulse/sign and analog inputs on a 44-pin CN1 connector (the -E variant is EtherCAT only). No STO and no dynamic brake. |
-| Delta ACS3-MDTB4400 | CN1 screw-terminal breakout for the -L drive |
+| CN1 connector | The 44-pin solder-cup connector that came in the box with the drive. So far I've only soldered the wires I need for testing. |
 | Masso G3 | The lathe's existing controller, running on 12 V |
 | Mean Well HDR-15-24 | Small 24 V DIN supply for the drive's digital I/O (COM+), since the Masso runs on 12 V |
 | Gates XPZ 950 belt | Cogged SPZ, the same belt the machine already used |
@@ -84,12 +84,12 @@ extra pulley width.
 The servo has the same 70 mm spigot as the old 71-frame motor, so it drops
 into the existing bore in the swinging plate. The bolt pattern is different
 (4 holes on a 90 mm PCD instead of 85 mm), so I rotated the servo 45 degrees,
-then drilled 5.0 mm and tapped M6 on the 90 mm PCD in the plate. I made a
+then drilled four M6 clearance holes on the 90 mm PCD in the plate. I made a
 3D-printed drilling template in Fusion that locates in the 70 mm bore, and
 used a 1/4" transfer punch through it to mark the holes.
 
-The servo bolts to the back of the plate with M6 button-head screws, and the
-shaft sticks out about 26 mm past the plate's front face. The plate is about
+The servo sits on the back of the plate, held by M6 button-head socket screws
+from the front with a locknut on the back of each. The shaft sticks out about 26 mm past the plate's front face. The plate is about
 8.8 mm thick and sits about 8.8 mm proud of the side panel.
 
 ![The servo shaft and key poking through the 70 mm bore in the swinging plate, with the four M6 button-head screws around it](/assets/images/posts/boxford-lathe-servo-spindle-part-1/servo-mounted.jpg)
