@@ -7,6 +7,7 @@ description: >-
   crashed the boot script before any interfaces were configured.
 categories: [troubleshooting]
 tags: [pfsense, netgate, sg-3100, networking]
+image: /assets/images/posts/pfsense-syslog-boot-crash/sg-3100.jpg
 ---
 
 I upgraded my Netgate SG-3100 from pfSense Plus 26.03.1 to 26.07.2, and the
@@ -16,6 +17,8 @@ PHP throw a fatal `TypeError` while syslogd is starting at boot, which kills
 `/etc/rc.bootup` before it configures any interfaces. Running
 `/etc/rc.reload_all` from the console got me back online, and replacing that
 element with a proper `<syslog>` section fixed it for good.
+
+![My Netgate SG-3100 on its shelf, with network cables running behind it](/assets/images/posts/pfsense-syslog-boot-crash/sg-3100.jpg)
 
 ## Symptoms
 
