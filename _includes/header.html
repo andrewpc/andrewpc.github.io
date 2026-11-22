@@ -1,0 +1,23 @@
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="{{ '/' | relative_url }}" aria-label="{{ site.title }}, home">
+      <span class="brand-mark" aria-hidden="true">&gt;_</span>
+      <span class="brand-name">{{ site.title }}</span>
+    </a>
+    <nav class="site-nav" aria-label="Main">
+      {%- for item in site.nav -%}
+        {%- assign active = false -%}
+        {%- if item.url == '/' -%}
+          {%- if page.url == '/' or page.layout == 'post' -%}{%- assign active = true -%}{%- endif -%}
+        {%- elsif page.url == item.url -%}{%- assign active = true -%}{%- endif -%}
+        <a href="{{ item.url | relative_url }}"{% if active %} aria-current="page"{% endif %}>{{ item.title }}</a>
+      {%- endfor -%}
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn search-open" type="button" aria-label="Search posts" title="Search (/)">{% include icon.html name='search' %}<kbd>/</kbd></button>
+      <button class="icon-btn theme-toggle" type="button" aria-label="Toggle dark mode" title="Toggle dark mode">
+        <span class="when-dark">{% include icon.html name='sun' %}</span><span class="when-light">{% include icon.html name='moon' %}</span>
+      </button>
+    </div>
+  </div>
+</header>

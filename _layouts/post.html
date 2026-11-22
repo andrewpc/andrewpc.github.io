@@ -1,0 +1,37 @@
+---
+layout: default
+---
+{%- assign cat = page.categories | first -%}
+<div class="progress" aria-hidden="true"><span></span></div>
+<article class="post" itemscope itemtype="https://schema.org/BlogPosting">
+  <header class="post-header wrap wrap-narrow">
+    <div class="post-kicker">{% include category-pill.html category=cat %}<span class="meta">{% include post-meta.html post=page %}</span></div>
+    <h1 class="post-title" itemprop="headline">{{ page.title | escape }}</h1>
+    {%- if page.description %}<p class="lede" itemprop="description">{{ page.description | strip }}</p>{% endif -%}
+    <ul class="tags" aria-label="Tags">
+      {%- for tag in page.tags -%}<li><a href="{{ '/tags/' | relative_url }}#tag-{{ tag | slugify }}">#{{ tag }}</a></li>{%- endfor -%}
+    </ul>
+  </header>
+  <div class="post-layout wrap">
+    <div class="prose" itemprop="articleBody">
+      {{ content }}
+    </div>
+    <aside class="toc" aria-label="On this page" hidden>
+      <p class="toc-title">On this page</p>
+      <ol></ol>
+    </aside>
+  </div>
+  <footer class="post-footer wrap wrap-narrow">
+    {%- if page.source_project -%}
+      <p class="source">{% include icon.html name='repo' %} From the project <a href="https://github.com/{{ page.source_project }}">{{ page.source_project }}</a></p>
+    {%- endif -%}
+    <nav class="post-nav" aria-label="More posts">
+      {%- if page.previous -%}
+        <a class="post-nav-prev" href="{{ page.previous.url | relative_url }}"><span>{% include icon.html name='arrow-left' %} Older</span>{{ page.previous.title | escape }}</a>
+      {%- else -%}<span></span>{%- endif -%}
+      {%- if page.next -%}
+        <a class="post-nav-next" href="{{ page.next.url | relative_url }}"><span>Newer {% include icon.html name='arrow-right' %}</span>{{ page.next.title | escape }}</a>
+      {%- endif -%}
+    </nav>
+  </footer>
+</article>

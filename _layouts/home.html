@@ -1,0 +1,33 @@
+---
+layout: default
+---
+<section class="hero">
+  <div class="wrap">
+    <p class="eyebrow"><span class="prompt">~/{{ site.github_username }}</span> $ cat notes/*</p>
+    <h1 class="hero-title">{{ site.tagline | default: site.title }}</h1>
+    <p class="hero-sub">{{ site.description }}</p>
+    {%- assign cats = site.categories | sort -%}
+    <div class="filters" role="group" aria-label="Filter by category">
+      <button type="button" class="chip" data-filter="all" aria-pressed="true">All <span>{{ site.posts | size }}</span></button>
+      {%- for c in cats -%}
+        {%- assign info = site.data.categories[c.first] -%}
+        <button type="button" class="chip chip-{{ c[0] }}" data-filter="{{ c[0] }}" aria-pressed="false">{{ info.label | default: c[0] }} <span>{{ c[1] | size }}</span></button>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+<section class="wrap posts">
+  {%- if site.posts.size == 0 -%}
+    <p class="empty">No posts yet.</p>
+  {%- endif -%}
+  <div class="card-grid">
+    {%- for post in site.posts -%}
+      {%- if forloop.first -%}
+        {% include post-card.html post=post featured=true %}
+      {%- else -%}
+        {% include post-card.html post=post %}
+      {%- endif -%}
+    {%- endfor -%}
+  </div>
+  {{ content }}
+</section>

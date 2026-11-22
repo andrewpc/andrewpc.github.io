@@ -1,0 +1,14 @@
+# The four allowed post categories (see CLAUDE.md). The theme uses these for
+# labels, colours and the placeholder art on cards without an image.
+troubleshooting:
+  label: Troubleshooting
+  glyph: "!"
+til:
+  label: TIL
+  glyph: "?"
+project-notes:
+  label: Project notes
+  glyph: "#"
+guides:
+  label: Guides
+  glyph: ">"

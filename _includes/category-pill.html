@@ -1,0 +1,3 @@
+{%- assign cat = include.category -%}
+{%- assign info = site.data.categories[cat] -%}
+<a class="pill pill-{{ cat }}" href="{{ '/tags/' | relative_url }}#category-{{ cat }}">{{ info.label | default: cat }}</a>
