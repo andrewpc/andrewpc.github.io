@@ -8,7 +8,10 @@ description: >-
   battery between self-consumption and grid charging.
 categories: [project-notes]
 tags: [home-assistant, multiscrape, solar, battery, qcells]
+image: /assets/images/posts/qcells-inverter-home-assistant-multiscrape/power-flow.png
 ---
+
+![The Solar Generation & Forecast card on my wall tablet: a power-flow diagram of solar, grid, battery and house, with "Timed" under the solar circle, above Solcast forecast totals](/assets/images/posts/qcells-inverter-home-assistant-multiscrape/power-flow.png)
 
 My Qcells hybrid inverter and battery doesn't have a Home Assistant integration,
 and I didn't want to depend on the cloud app. It does have a local installer web
@@ -17,7 +20,7 @@ page, though, and behind it is a small JSON API on the inverter itself. I use th
 to log in to that page, read solar, battery and grid power every minute, and
 post commands that switch the battery between self-consumption and grid
 charging. Everything stays on the LAN, and the readings feed Home Assistant's
-Energy dashboard and a few automations.
+Energy dashboard and the power-flow card on my wall tablet (above).
 
 This post covers how it fits together and the config, as of Multiscrape 9.2.1
 and Home Assistant 2026.11.
@@ -215,10 +218,15 @@ The `availability` templates matter. Without them, a failed scrape reads as 0 W
 instead of "unavailable", and the integrals quietly count those gaps as zero
 power instead of skipping them.
 
-## Using it in automations
+## Automations: none, for now
 
-The simplest automation resets the policy at midnight, so a day of grid charging
-never carries over:
+I'm currently on an electricity plan with three free hours a day, so I don't
+have any automations choosing the mode for me. The sensors drive the dashboards
+and the Energy dashboard, and the command scrapers are there for when I want to
+switch modes myself.
+
+If you do want to automate it, the trigger actions work like any other action.
+For example, this resets the policy to Self Consumption at midnight:
 
 ```yaml
 alias: Reset Solar Policy to Self Consumption at Midnight
@@ -236,28 +244,15 @@ actions:
 mode: single
 ```
 
-I've also been experimenting with smarter ones, currently switched off while I
-tune them:
-
-- **A phone notification on gloomy weekday mornings.** If the
-  [Solcast](https://github.com/BJReplay/ha-solcast-solar) forecast for the day
-  is low and the battery is under 45%, it notifies me. The notification has a
-  "Trigger Manual Charge" button that switches the policy to Time Based, runs a
-  battery sync, re-reads the policy and tells me whether it worked.
-- **A grid-charge decision mid-morning.** It works out how much energy the
-  battery (20 kWh) needs to reach 90%, compares that with Solcast's remaining
-  forecast minus the house's expected base load, and turns grid charging on or
-  off accordingly. After each switch it calls the policy scraper and waits for
-  `sensor.qcells_energy_policy` to show the new value, so it only reports
-  success once the inverter has actually changed.
-
-That "send the command, re-read the state, then confirm" pattern is the main
-thing I'd suggest. The command scrapers only tell you the inverter accepted the
-request, not that the setting changed.
+For anything more involved, follow each command with
+`multiscrape.trigger_qcells_energy_policy_scraper`, then wait for
+`sensor.qcells_energy_policy` to show the new value before treating the change
+as done. The command scrapers only tell you the inverter accepted the request,
+not that the setting actually changed.
 
 On the wall tablet, the power-flow card shows a small "Timed" or "Self" label
-under the solar circle, taken from `sensor.qcells_energy_policy`, so you can see
-at a glance whether the battery is charging from the grid.
+under the solar circle, taken from `sensor.qcells_energy_policy`, so I can see
+at a glance which mode the inverter is in.
 
 ## Gotchas I hit with Multiscrape 9.x
 
