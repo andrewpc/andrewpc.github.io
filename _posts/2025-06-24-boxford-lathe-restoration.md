@@ -169,6 +169,17 @@ has wiring I trust, and has an e-stop that actually cuts the power.
 
 ![The finished lathe in the workshop, with the guard open and the tailstock in place](/assets/images/posts/boxford-lathe-restoration/hero.jpg)
 
+In May I checked the spindle runout with a Mitutoyo test indicator (0.01 mm
+divisions) on a ground pin held in an ER collet chuck. The needle barely moves
+as the spindle turns.
+
+<video controls muted playsinline preload="metadata"
+       poster="/assets/images/posts/boxford-lathe-restoration/runout-poster.jpg"
+       style="display:block;max-width:100%;max-height:640px;margin:0 auto">
+  <source src="/assets/images/posts/boxford-lathe-restoration/runout.mp4" type="video/mp4">
+  A test indicator on a ground pin in the collet chuck, barely moving as the spindle turns.
+</video>
+
 Since then I've kept going: the
 [spindle encoder](/2026/10/31/boxford-lathe-spindle-encoder/) is now done
 properly on the original disc, and the induction motor and VFD are being
