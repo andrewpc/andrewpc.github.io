@@ -15,7 +15,7 @@ The MASSO controller on my lathe can take files over the network, but only
 through MASSO Link, the official desktop app: you pick a file, click send, and
 do it again for the next one. I wanted to save a file from CAM and have it turn
 up on the controller by itself. So I captured the traffic between MASSO Link
-and the controller, worked out the protocol, and wrote
+and the controller with [Wireshark](https://www.wireshark.org/), worked out the protocol, and wrote
 [masso-link-protocol-client](https://github.com/andrewpc/masso-link-protocol-client),
 a single Python file with no dependencies that can upload files, watch a folder
 and upload whatever changes, read the tool table and show live machine status.
@@ -37,7 +37,8 @@ The things I actually wanted were all about not clicking:
 
 ## The protocol
 
-Everything goes over UDP. The controller sends from port 65535, and there's a
+Everything goes over UDP. In Wireshark, a display filter of
+`udp.port == 65535` shows just the MASSO conversation. The controller sends from port 65535, and there's a
 quirk that took a while to notice: it sends its replies to port **11000**,
 regardless of which port the request came from (sometimes it also replies to
 the sender's port). MASSO Link sends from an ephemeral port and still hears
