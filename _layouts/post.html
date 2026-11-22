@@ -33,5 +33,6 @@ layout: default
         <a class="post-nav-next" href="{{ page.next.url | relative_url }}"><span>Newer {% include icon.html name='arrow-right' %}</span>{{ page.next.title | escape }}</a>
       {%- endif -%}
     </nav>
+    {%- include comments.html -%}
   </footer>
 </article>

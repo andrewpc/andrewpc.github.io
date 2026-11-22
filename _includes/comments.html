@@ -1,0 +1,15 @@
+{%- assign g = site.giscus -%}
+{%- if g.category_id and g.category_id != "" and page.comments != false -%}
+<section class="comments" id="comments" aria-labelledby="comments-title">
+  <h2 class="comments-title" id="comments-title">Comments</h2>
+  <p class="comments-note">Questions, corrections or your own fix? Leave a comment below. It needs a GitHub account and is stored as a public <a href="https://github.com/{{ g.repo }}/discussions">discussion on this site's repo</a>.</p>
+  <div class="giscus"
+    data-repo="{{ g.repo }}"
+    data-repo-id="{{ g.repo_id }}"
+    data-category="{{ g.category }}"
+    data-category-id="{{ g.category_id }}"
+    data-theme-dark="{{ '/assets/giscus/dark.css' | absolute_url }}"
+    data-theme-light="{{ '/assets/giscus/light.css' | absolute_url }}"></div>
+  <noscript><p class="comments-note">Comments need JavaScript. You can also <a href="https://github.com/{{ g.repo }}/discussions">join the discussion on GitHub</a>.</p></noscript>
+</section>
+{%- endif -%}

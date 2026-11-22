@@ -8,8 +8,40 @@
       var next = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
       root.setAttribute('data-theme', next);
       try { localStorage.setItem('theme', next); } catch (e) {}
+      syncGiscus();
     });
   });
+
+  // Comments (giscus). Loaded here so the starting theme matches the page,
+  // and kept in sync when the theme toggle is used.
+  var giscusBox = document.querySelector('div.giscus');
+  function giscusTheme() {
+    if (!giscusBox) return '';
+    return root.getAttribute('data-theme') === 'light' ? giscusBox.dataset.themeLight : giscusBox.dataset.themeDark;
+  }
+  function syncGiscus() {
+    var frame = document.querySelector('iframe.giscus-frame');
+    if (frame && frame.contentWindow) {
+      frame.contentWindow.postMessage({ giscus: { setConfig: { theme: giscusTheme() } } }, 'https://giscus.app');
+    }
+  }
+  if (giscusBox) {
+    var d = giscusBox.dataset;
+    var s = document.createElement('script');
+    s.src = 'https://giscus.app/client.js';
+    s.async = true;
+    s.crossOrigin = 'anonymous';
+    var attrs = {
+      'data-repo': d.repo, 'data-repo-id': d.repoId,
+      'data-category': d.category, 'data-category-id': d.categoryId,
+      'data-mapping': 'pathname', 'data-strict': '1',
+      'data-reactions-enabled': '1', 'data-emit-metadata': '0',
+      'data-input-position': 'top', 'data-lang': 'en', 'data-loading': 'lazy',
+      'data-theme': giscusTheme()
+    };
+    Object.keys(attrs).forEach(function (k) { s.setAttribute(k, attrs[k]); });
+    giscusBox.appendChild(s);
+  }
 
   // Code blocks: language label + copy button
   document.querySelectorAll('.prose div.highlighter-rouge').forEach(function (block) {
