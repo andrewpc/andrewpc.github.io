@@ -155,8 +155,8 @@ new 250 N gas strut (220 mm) now holds it open.
 I also milled a riser block for the cross-slide. It sits under a solid
 rear-mount toolpost, which brings the tool to centre height behind the work.
 
-I also cut down the quick-change toolpost handle so it clears the guard, and
-printed a green knob for the end of it.
+I also cut down the quick-change toolpost handle and printed a green knob for
+the end of it.
 
 ![The milled riser block bolted to the cross-slide, below the X-axis stepper](/assets/images/posts/boxford-lathe-restoration/riser-block.jpg)
 
