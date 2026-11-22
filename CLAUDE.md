@@ -22,10 +22,19 @@ that.
    summary, the source project/repo the post came from, and a checklist of
    anything Andrew should double-check (facts you weren't sure of, things you
    redacted).
-6. **Never merge it yourself and never push to `main`.** Andrew merges when
-   he's happy, and merging is what publishes it.
+6. **Merge it yourself once the PR's build check passes**, unless Andrew
+   said not to (for example "don't publish yet", "let me review it first",
+   "hold it", or "draft"). Merging is what publishes it, so do the privacy
+   scrub below before you open the PR. Use a merge commit, e.g.
+   `gh api -X PUT repos/andrewpc/andrewpc.github.io/pulls/<number>/merge -f merge_method=merge`.
+   - If the build check fails, fix it on the branch. Never merge a red PR.
+   - If Andrew asked you to hold it, leave the PR open and tell him it's
+     waiting for his review.
+   - Tell Andrew the post's live URL once it's merged.
+7. **Never push to `main` directly.** Every change goes through a PR.
 
-To revise a post, push more commits to the same PR branch.
+To revise a post that's still open, push more commits to the same PR branch.
+To fix one that's already published, open a new PR from a fresh branch.
 
 ## File name and location
 
@@ -43,7 +52,8 @@ Images go in `assets/images/posts/<slug>/` and are referenced as
 prefer PNG for screenshots, SVG for diagrams. Always write alt text.
 
 Unfinished ideas can go in `_drafts/` (no date in the filename); they are not
-published. Normally you'll go straight to `_posts/`, since the PR is the review step.
+published. Normally you'll go straight to `_posts/`; use `_drafts/` if Andrew
+wants something saved but not published.
 
 ## Front matter
 

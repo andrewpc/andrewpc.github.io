@@ -15,8 +15,8 @@ A lot of my tinkering happens with Claude helping out in the project's
 repository. When we land on something worth sharing, I ask Claude to write it
 up. It opens a pull request against
 [this site's repo](https://github.com/andrewpc/andrewpc.github.io) with the
-post, I read it over and fix anything that's off, and merging the PR publishes
-it. Nothing goes live without me reviewing it first.
+post, and once the site builds cleanly the PR is merged and the post goes
+live. If something's off, I fix it with a follow-up change.
 
 The site itself is plain [Jekyll](https://jekyllrb.com/) with a small custom
 theme, built and deployed to GitHub Pages by a GitHub Actions workflow.
