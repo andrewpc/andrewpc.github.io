@@ -130,7 +130,8 @@ disabled.
    and click Save. It succeeded this time and filled in the rest of the
    defaults.
 
-5. **Clear the crash report and reboot.**
+5. **Clear the crash report and reboot.** After a cold reboot, the LAN, DHCP
+   and logging all came up on their own, with no console help.
 
 To check whether your config has the same problem before you upgrade:
 
